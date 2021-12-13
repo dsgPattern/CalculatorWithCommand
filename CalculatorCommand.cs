@@ -19,12 +19,12 @@ namespace CalculatorWithCommand
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            _calculator.Calculate(_operation, _operand);
         }
 
         public override void UnExecute()
         {
-            throw new NotImplementedException();
+            _calculator.Calculate(UndoOperation(_operation), _operand);
         }
 
         private Operation UndoOperation(Operation operation)
