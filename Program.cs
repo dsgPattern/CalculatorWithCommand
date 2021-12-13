@@ -9,11 +9,14 @@ namespace CalculatorWithCommand
             var calculator = new Calculator();
             var calcFlow = new CalculatorFlow(calculator);
             calcFlow.ExecuteOperation(Operation.Add, 5);//5
-            calcFlow.ExecuteOperation(Operation.Multiplication, 4);//20
+            calcFlow.ExecuteOperation(Operation.Add, 5);//10
+            calcFlow.ExecuteOperation(Operation.Multiplication, 4);//40
 
+            calcFlow.Undo();//10
             calcFlow.Undo();//5
+            calcFlow.Redo();//10
+            calcFlow.Redo();//15
             calcFlow.Redo();//20
-            calcFlow.Redo();//80
 
 
 
